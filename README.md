@@ -6,10 +6,19 @@
 This is a raw "database" driver for
 [ultimate-migrate](https://github.com/wzrdtales/node-ultimate-migrate).
 It uses instead of the database, the migration files to build the schema.
+To accomplish this we directly pass through this driver to db-migrate, as we
+have data bindings on the umigrate side we don't explicitly provide a driver
+for db-migrate, but utilize the driver require feature of db-migrate.
+
+This driver is splitted in to two parts:
+The umigrate driver which are simply function which return the build collections
+and the db-migrate driver which provides all functions of db-migrate and write
+the data into the collections. 
 
 ## Donate
 
-If you like my work and it is helping you, please consider making a donation to help me keeping the development and support up. Thanks :)
+If you like my work and it is helping you, please consider making a donation to
+help me keeping the development and support up. Thanks :)
 
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H4CEDA2UTTP5A)
 
